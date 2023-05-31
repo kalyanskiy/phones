@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Phones</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Телефонный справочник</h1>
+
+    <button onclick="openEditor()">Добавить контакт</button>
+    <button onclick="openEditModal()">Редактировать контакт</button>
+    <button onclick="openDeleteModal()">Удалить контакт</button>
+    <button onclick="sortContacts()">Сортировать контакты</button>
+
+    <table id="contactTable" class="contact-table">
+      <tr>
+        <th>№</th>
+        <th>Имя</th>
+        <th>Телефон</th>
+        <th>Примечание</th>
+      </tr>
+    </table>
+
+    <div id="editorModal" class="modal">
+      <div class="modal-content">
+        <h2>Редактор контакта</h2>
+
+        <p>Укажите имя контакта:</p>
+        <input type="text" id="nameInput" />
+
+        <p>Укажите телефон:</p>
+        <input type="text" id="phoneInput" />
+
+        <p>Выберите тип телефона:</p>
+        <select id="typeSelect">
+          <option value="Служебный">Служебный</option>
+          <option value="Домашний">Домашний</option>
+          <option value="Мобильный">Мобильный</option>
+          <option value="Соседский">Соседский</option>
+        </select>
+
+        <div class="button-group">
+          <button onclick="saveContact()">Сохранить контакт</button>
+          <button onclick="closeEditor()">Отмена</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <h2>Редактор контакта</h2>
+
+        <p>Выберите контакт для редактирования:</p>
+        <select id="editContactSelect"></select>
+
+        <p>Укажите имя контакта</p>
+        <input type="text" id="editNameInput" />
+
+        <p>Укажите телефон:</p>
+        <input type="text" id="editPhoneInput" />
+
+        <p>Выберите тип телефона:</p>
+        <select id="editTypeSelect">
+          <option value="Служебный">Служебный</option>
+          <option value="Домашний">Домашний</option>
+          <option value="Мобильный">Мобильный</option>
+          <option value="Соседский">Соседский</option>
+        </select>
+
+        <div class="button-group">
+          <button onclick="updateContact()">Сохранить изменения</button>
+          <button onclick="closeEditModal()">Отмена</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+      <div class="modal-content">
+        <h2>Удаление контакта</h2>
+        <p id="deleteConfirmationText"></p>
+
+        <p>Выберите контакт для удаления:</p>
+        <select id="deleteContactSelect"></select>
+
+        <div class="button-group">
+          <button onclick="deleteContact()">Удалить контакт</button>
+          <button onclick="closeDeleteModal()">Отмена</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

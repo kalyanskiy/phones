@@ -1,0 +1,40 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 40px auto;
+  padding: 20px;
+  width: 350px;
+  border-radius: 15px;
+}
+
+.contact-table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.contact-table th,
+td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.button-group {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-group button {
+  margin-right: 5px;
+}
